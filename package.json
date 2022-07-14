@@ -1,0 +1,16 @@
+{
+  "name": "tarot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "download": "^8.0.0",
+    "playwright": "^1.23.3"
+  }
+}
