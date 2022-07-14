@@ -27,17 +27,19 @@ for await (const link of imagePageLinks) {
   imageLinks.push(`https:${imageLink}`);
 }
 
-for await(const link of imageLinks) {
+for await (const link of imageLinks) {
   const filename = ["minor", link.split("/").pop().toLowerCase()]
     .join("_")
     .replace("minor_rws_tarot", "major")
     .replace("pents", "pentacles")
     .replace("minor_thelovers.jpg", "major_06_lovers.jpg")
     .replace("minor_tarot_nine_of_wands.jpg", "minor_wands09.jpg")
+    .replace(/(\d{2})\.jpg$/, "_$1.jpg")
+    .replace(/_(\d{2})_.*\.jpg$/, "_$1.jpg");
 
   console.log(link, filename);
 
-  await download(link, "imgs",{filename})
+  await download(link, "imgs", { filename });
 }
 
 browser.close();
